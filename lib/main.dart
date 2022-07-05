@@ -1,4 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:fwitter/router.gr.dart';
+
+import 'utils/globals.dart';
+
+final _appRouter = AppRouter();
 
 void main() {
   runApp(const App());
@@ -9,9 +16,24 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return _Router();
+  }
+}
+
+class _Router extends ConsumerWidget {
+  const _Router({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      scaffoldMessengerKey: gScaffoldMessengerKey,
       title: 'Fwitter',
-      home: SizedBox.shrink(),
+      theme: appTheme,
+      routerDelegate: AutoRouterDelegate(_appRouter),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }

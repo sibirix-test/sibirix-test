@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fwitter/utils/globals.dart';
 
-final theme = ThemeData.from(colorScheme: _colorScheme);
+final appTheme = ThemeData.from(colorScheme: _colorScheme);
 
 final _colorScheme = ColorScheme(
   primary: AppColors.primary,
