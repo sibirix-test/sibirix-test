@@ -8,7 +8,7 @@ import 'utils/globals.dart';
 final _appRouter = AppRouter();
 
 void main() {
-  runApp(const App());
+  runApp(const ProviderScope(child: App()));
 }
 
 class App extends StatelessWidget {
