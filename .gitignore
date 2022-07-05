@@ -42,7 +42,6 @@ app.*.map.json
 
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 *.g.dart
-
-pubspec.lock
-
+*.freezed.dart
 .fvm/flutter_sdk
+pubspec.lock
