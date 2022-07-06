@@ -9,7 +9,8 @@ class EmojiModel with _$EmojiModel {
 
   const factory EmojiModel(
     int id,
-    String emoji,
+    String? emoji,
+    int count,
   ) = _EmojiModel;
 
   factory EmojiModel.fromJson(Map<String, dynamic> json) =>
