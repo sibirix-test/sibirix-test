@@ -7,7 +7,6 @@ import 'package:fwitter/models/fweet/fweet_model.dart';
 import 'package:fwitter/provider/feed_provider/feed_provider.dart';
 import 'package:fwitter/utils/app_colors.dart';
 import 'package:intl/intl.dart';
-import 'package:intl/date_symbol_data_local.dart';
 
 class FweetFeedScreen extends ConsumerWidget {
   const FweetFeedScreen({Key? key}) : super(key: key);
@@ -158,11 +157,20 @@ class FweetCard extends ConsumerWidget {
                         DateFormat.MMMMd('ru_RU').format(fweet.createdAt),
                       ),
                       const SizedBox(width: 16),
-                      IconButton(
-                        icon: const FaIcon(FontAwesomeIcons.heart),
-                        iconSize: 18,
-                        splashRadius: 24,
-                        onPressed: () {},
+                      ...fweet.emojis
+                          // .where((element) => element.count != 0)
+                          .map(
+                        (v) => IconButton(
+                          icon: Text(v.emoji),
+                          // icon: const FaIcon(FontAwesomeIcons.heart),
+                          iconSize: 18,
+                          splashRadius: 24,
+                          onPressed: () {
+                            ref
+                                .read(feedProvider.notifier)
+                                .likePost(fweet.emojis.first.id);
+                          },
+                        ),
                       ),
                       Text(
                         fweet.emojis
