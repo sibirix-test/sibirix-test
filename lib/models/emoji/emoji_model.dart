@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'emoji_model.freezed.dart';
@@ -10,6 +11,7 @@ class EmojiModel with _$EmojiModel {
   const factory EmojiModel(
     int id,
     String emoji,
+    int count,
   ) = _EmojiModel;
 
   factory EmojiModel.fromJson(Map<String, dynamic> json) =>

@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fwitter/utils/globals.dart';
 
-final appTheme = ThemeData.from(colorScheme: _colorScheme);
+final appTheme = ThemeData.from(colorScheme: _colorScheme).copyWith(
+  appBarTheme: const AppBarTheme(
+    backgroundColor: AppColors.secondary,
+    elevation: 0.0,
+  ),
+  dividerColor: Colors.black,
+);
 
 final _colorScheme = ColorScheme(
   primary: AppColors.primary,

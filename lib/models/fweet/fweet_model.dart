@@ -11,7 +11,7 @@ class FweetModel with _$FweetModel {
   const FweetModel._();
 
   const factory FweetModel(
-    int id,
+    String id,
     String text,
     UserModel creator,
     List<EmojiModel> emojis,

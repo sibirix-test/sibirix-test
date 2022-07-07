@@ -10,7 +10,8 @@ class UserModel with _$UserModel {
   const factory UserModel(
     int id,
     String name,
-    String avatar,
+    String nickname,
+    String? avatar,
   ) = _UserModel;
 
   factory UserModel.fromJson(Map<String, dynamic> json) =>
