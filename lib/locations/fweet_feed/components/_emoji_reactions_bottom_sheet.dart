@@ -17,10 +17,10 @@ class _EmojiReactionsBottomSheet extends ConsumerWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16).copyWith(bottom: 6),
           child: Text(
             'Реакция на фвит #${fweet.id} пользователя @${fweet.creator.nickname}',
-            style: Theme.of(context).textTheme.button,
+            style: Theme.of(context).textTheme.bodyMedium,
           ),
         ),
         Wrap(
