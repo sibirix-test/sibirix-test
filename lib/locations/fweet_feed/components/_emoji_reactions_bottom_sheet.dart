@@ -9,6 +9,8 @@ class _EmojiReactionsBottomSheet extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    /// the user's reaction to the post,
+    /// which is stored locally in the hive box
     final fweetUserReactions = ref.watch(statByFweetIdProvider(fweet.id));
 
     return Column(
@@ -38,6 +40,11 @@ class _EmojiReactionsBottomSheet extends ConsumerWidget {
                       ),
                       splashRadius: 24,
                       onPressed: () {
+                        /// if the user did not leave a reaction earlier - add entry to the database
+                        ///
+                        /// if user left a reaction to another emoji - remove the old emoji and add a new one
+                        ///
+                        /// if user tap on the same emoji - remove it from the database
                         fweetUserReactions == null ||
                                 fweetUserReactions != entry.id
                             ? ref.read(statProvider.notifier).fweetReaction(
