@@ -1,12 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:fwitter/utils/globals.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-final appTheme = ThemeData.from(colorScheme: _colorScheme).copyWith(
+final appTheme = ThemeData(
+  colorScheme: _colorScheme,
   appBarTheme: const AppBarTheme(
-    backgroundColor: AppColors.secondary,
-    elevation: 0.0,
+    elevation: 0.3,
+    color: AppColors.background,
   ),
   dividerColor: Colors.black,
+  textTheme: GoogleFonts.ralewayTextTheme(),
+  textButtonTheme: TextButtonThemeData(
+    style: TextButton.styleFrom(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(30),
+      ),
+    ),
+  ),
 );
 
 final _colorScheme = ColorScheme(
