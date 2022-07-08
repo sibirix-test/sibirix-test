@@ -47,11 +47,15 @@ class _EmojiReactionsBottomSheet extends ConsumerWidget {
                         /// if user tap on the same emoji - remove it from the database
                         fweetUserReactions == null ||
                                 fweetUserReactions != entry.id
-                            ? ref.read(statProvider.notifier).fweetReaction(
-                                fweetId: fweet.id, emojiId: entry.id)
+                            ? ref
+                                .read(statProvider.notifier)
+                                .reactionOnFweetById(
+                                  fweet.id,
+                                  emojiId: entry.id,
+                                )
                             : ref
                                 .read(statProvider.notifier)
-                                .deleteReaction(fweetId: fweet.id);
+                                .deleteReactionByFweetId(fweet.id);
 
                         ref.refresh(statProvider);
                       },

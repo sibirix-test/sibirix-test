@@ -26,16 +26,13 @@ class StatNotifier extends StateNotifier<AsyncValue<Box<int>>> {
     state = await AsyncValue.guard(() async => await Hive.openBox<int>('stat'));
   }
 
-  Future<void> fweetReaction({
-    required String fweetId,
+  Future<void> reactionOnFweetById(
+    String fweetId, {
     required int emojiId,
   }) async {
     state.whenData((box) => box.put(fweetId, emojiId));
   }
 
-  Future<void> deleteReaction({
-    required String fweetId,
-  }) async {
-    state.whenData((box) => box.delete(fweetId));
-  }
+  Future<void> deleteReactionByFweetId(String fweetId) async =>
+      state.whenData((box) => box.delete(fweetId));
 }
