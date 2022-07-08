@@ -14,7 +14,6 @@ import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:flutter/material.dart' as _i4;
 
 import 'locations/fweet_feed/fweet_feed_screen.dart' as _i1;
-import 'locations/welcome_screen/welcome_screen.dart' as _i2;
 
 class AppRouter extends _i3.RootStackRouter {
   AppRouter([_i4.GlobalKey<_i4.NavigatorState>? navigatorKey])
@@ -26,10 +25,6 @@ class AppRouter extends _i3.RootStackRouter {
       return _i3.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.FweetFeedScreen());
     },
-    WelcomeRoute.name: (routeData) {
-      return _i3.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.WelcomeScreen());
-    }
   };
 
   @override
