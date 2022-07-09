@@ -15,6 +15,14 @@ class _FweetCard extends ConsumerWidget {
     final isUserReactOnFweet =
         ref.watch(statByFweetIdProvider(fweet.id)) != null;
 
+    /// the emoji that the user selected
+    final userReaction = isUserReactOnFweet
+        ? fweet.emojis
+            .firstWhere(
+                (v) => v.id == ref.watch(statByFweetIdProvider(fweet.id)))
+            .emoji
+        : null;
+
     /// full fweet reactions statistics
     final emojisCount = networkFweetReactions + (isUserReactOnFweet ? 1 : 0);
 
@@ -61,10 +69,28 @@ class _FweetCard extends ConsumerWidget {
                       const SizedBox(width: 16),
                       TextButton.icon(
                         icon: isUserReactOnFweet
-                            ? const FaIcon(
-                                FontAwesomeIcons.solidHeart,
-                                color: AppColors.secondary,
-                                size: 18,
+                            ? SizedBox(
+                                width: 25,
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      bottom: 0,
+                                      right: 2,
+                                      child: Text(
+                                        userReaction!,
+                                        style: const TextStyle(
+                                          fontSize: 8,
+                                        ),
+                                      ),
+                                    ),
+                                    FaIcon(
+                                      FontAwesomeIcons.solidHeart,
+                                      color:
+                                          AppColors.primary.withOpacity(0.95),
+                                      size: 18,
+                                    ),
+                                  ],
+                                ),
                               )
                             : const FaIcon(
                                 FontAwesomeIcons.heart,
