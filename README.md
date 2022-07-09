@@ -1,17 +1,10 @@
-# fwitter
+# Fwitter
 
-A new Flutter project.
+Not Twitter. Fwitter.
 
-## Getting Started
+# Screenshots
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# fwitter
+<img src="https://user-images.githubusercontent.com/27693379/178089866-7a492f01-f791-4a8f-891e-d24dd59587aa.jpg" width="300">
+<img src="https://user-images.githubusercontent.com/27693379/178089874-83ea3076-8402-4cc8-9867-d6a13cb2d7c0.jpg" width="300">
+<img src="https://user-images.githubusercontent.com/27693379/178089870-4888a522-8770-49a3-a853-908240b20250.jpg" width="300">
+<img src="https://user-images.githubusercontent.com/27693379/178089873-258063b0-94af-451c-bbdb-c85dde3bb7b9.jpg" width="300">
