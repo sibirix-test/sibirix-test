@@ -2,6 +2,12 @@
 
 Not Twitter. Fwitter.
 
+# Important notice
+
+I tested only on Flutter 2.10.3 and Android, with the rest of the OS and SDK versions has not been tested!
+
+The application may not start if you are not using Flutter 2.10.3. If it does not start, then use the  ```fvm flutter run command```
+
 # Screenshots
 
 <img src="https://user-images.githubusercontent.com/27693379/178089866-7a492f01-f791-4a8f-891e-d24dd59587aa.jpg" width="300">
