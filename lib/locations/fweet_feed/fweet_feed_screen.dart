@@ -26,10 +26,10 @@ class FweetFeedScreen extends ConsumerWidget {
             orElse: () => ListView(
               children: List.generate(
                 10,
-                (_) => const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: CardLoading(
-                    height: 100,
+                (_) => Padding(
+                  padding: const EdgeInsets.all(16).copyWith(bottom: 4),
+                  child: const CardLoading(
+                    height: 150,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     margin: EdgeInsets.only(bottom: 10),
                   ),
